@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Testing with Katalon — Katalon Tutorials</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-inner">
+        <a href="index.html" class="logo">Katalon<span>Tutorials</span></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="web-testing.html">Web Testing</a></li>
+          <li><a href="api-testing.html">API Testing</a></li>
+          <li><a href="mobile-testing.html">Mobile Testing</a></li>
+          <li><a href="advanced.html">Advanced</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <a href="index.html#topics" class="back-link">← All topics</a>
+        <h1>API Testing with Katalon</h1>
+        <p>Design REST requests, validate responses, handle authentication, and chain APIs for end-to-end API test scenarios.</p>
+      </div>
+    </section>
+
+    <div class="content-area">
+      <div class="container">
+        <h2 id="rest-basics">REST API Basics</h2>
+        <p>Create an API test case: set HTTP method, URL, headers, and request body. Use the Request editor or script mode with <code>WS</code> (Web Service) keywords.</p>
+
+        <h2 id="requests">Requests & Responses</h2>
+        <p>Support for GET, POST, PUT, PATCH, DELETE. Configure query parameters, path variables, and body (form-data, raw JSON/XML). Validate status code and response body with assertions.</p>
+
+        <h2 id="auth">Authentication</h2>
+        <p>Configure Basic Auth, Bearer token, OAuth 2.0, or API key in the request profile or per request. Use variables for tokens when chaining (e.g. login → use token in next request).</p>
+
+        <h2 id="chaining">API Chaining</h2>
+        <p>Parse JSON/XML response and save values to variables. Use those variables in subsequent request URL, headers, or body to build multi-step API flows (e.g. create resource → get by ID).</p>
+
+        <h2 id="data-driven-api">Data-Driven API Tests</h2>
+        <p>Bind a Data File or Internal Data to the API test and parameterize URL, body, or expected values so the same test runs with multiple data rows.</p>
+
+        <h2 id="json-xml">JSON & XML Parsing</h2>
+        <p>Parse JSON response with <code>WS.getResponseBody()</code> and Groovy's <code>JsonSlurper</code>, or use JSON path in the Request editor to extract values. For XML, use <code>XmlSlurper</code> or built-in XML support. Store parsed values in variables for chaining or assertions.</p>
+
+        <h2 id="schema-validation">Response Schema Validation</h2>
+        <p>Validate that the response body matches an expected structure (required fields, types). Use script mode with a JSON schema validator library, or write assertions that check key paths and types. Helps catch breaking API changes early.</p>
+
+        <h2 id="query-path">Query Parameters & Path Variables</h2>
+        <p>In the API request, set the URL with path variables (e.g. <code>/users/${userId}</code>) and add query parameters in the Params section or in the URL. Use variables from profiles or from previous response parsing so one test can run against different IDs and filters.</p>
+
+        <h2 id="headers-content">Headers & Content Types</h2>
+        <p>Add headers in the request: <code>Content-Type: application/json</code>, <code>Accept: application/json</code>, and custom headers (e.g. API key, correlation ID). Set per request or in a shared request profile. Content-Type must match the body format (JSON, form-data, XML).</p>
+
+        <h2 id="error-handling">Error Handling & Status Codes</h2>
+        <p>Assert expected status code with <code>WS.verifyResponseStatusCode</code> or in the test case. Test error paths (4xx, 5xx) by sending invalid data and verifying status and error message. Use try-catch in script mode if you need to branch on response code.</p>
+
+        <h2 id="soap-graphql">SOAP & GraphQL</h2>
+        <p><strong>SOAP:</strong> Create a SOAP request with XML body and appropriate headers (SOAPAction, Content-Type). Send and validate XML response. <strong>GraphQL:</strong> Use POST with a JSON body containing <code>query</code> and optional <code>variables</code>; validate the JSON response structure and data.</p>
+
+        <h2 id="api-reports">API Test Reports</h2>
+        <p>After execution, the HTML report shows request and response for each API step. Use Katalon TestOps to centralize API test results, track history, and integrate with CI. Export or share reports for debugging and compliance.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Katalon<span>Tutorials</span></a>
+          <p>Complete tutorials for Katalon Studio — Web, API, and Mobile test automation.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="web-testing.html">Web</a></li>
+          <li><a href="api-testing.html">API</a></li>
+          <li><a href="mobile-testing.html">Mobile</a></li>
+          <li><a href="advanced.html">Advanced</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">Katalon Tutorials Blog — From Zero to Hero.</div>
+    </div>
+  </footer>
+</body>
+</html>

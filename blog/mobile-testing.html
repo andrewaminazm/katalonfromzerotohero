@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Testing with Katalon — Katalon Tutorials</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-inner">
+        <a href="index.html" class="logo">Katalon<span>Tutorials</span></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="web-testing.html">Web Testing</a></li>
+          <li><a href="api-testing.html">API Testing</a></li>
+          <li><a href="mobile-testing.html">Mobile Testing</a></li>
+          <li><a href="advanced.html">Advanced</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <a href="index.html#topics" class="back-link">← All topics</a>
+        <h1>Mobile Testing with Katalon</h1>
+        <p>Set up Android and iOS devices or emulators, capture mobile elements, and automate native and hybrid apps with Katalon.</p>
+      </div>
+    </section>
+
+    <div class="content-area">
+      <div class="container">
+        <h2 id="setup">Mobile Setup</h2>
+        <p>Install Android SDK and/or Xcode for iOS. Enable USB debugging (Android) or connect simulator. In Katalon, configure the mobile environment (Appium-based) and connect the device or start the emulator.</p>
+
+        <h2 id="android">Android Testing</h2>
+        <p>Create a mobile test case, select Android as target. Use Spy Mobile to capture elements from the app. Run tests on a connected device or Android emulator; install the app via Katalon or pre-install APK.</p>
+
+        <h2 id="ios">iOS Testing</h2>
+        <p>Use a Mac with Xcode and iOS Simulator or a physical iOS device. Configure capabilities (bundle ID, device name). Spy and record iOS elements, then execute test suites against the simulator or device.</p>
+
+        <h2 id="mobile-keywords">Mobile Keywords</h2>
+        <p>Use <code>Mobile.*</code> keywords: <code>Mobile.tap</code>, <code>Mobile.setText</code>, <code>Mobile.swipe</code>, <code>Mobile.scrollToText</code>, <code>Mobile.verifyElementExist</code>, and similar for gestures and assertions.</p>
+
+        <h2 id="spy-object-repo">Spy Mobile & Object Repository</h2>
+        <p>Use <strong>Spy Mobile</strong> to capture elements from the running app: start the app, then spy to add objects to the Mobile Object Repository. Edit properties (id, xpath, accessibility id) and use the same objects across test cases for maintainability.</p>
+
+        <h2 id="gestures">Mobile Gestures</h2>
+        <p>Use <code>Mobile.swipe</code> for directional swipes, <code>Mobile.scrollToText</code> to scroll until text is visible. For pinch, long press, or multi-touch, use the appropriate Mobile keywords or driver-based scripts. Gestures are essential for lists, carousels, and native controls.</p>
+
+        <h2 id="mobile-data-driven">Mobile Data-Driven Tests</h2>
+        <p>Bind a Data File or Internal Data to the mobile test case. Parameterize input text, expected labels, or device settings. Run the same flow with multiple rows for login credentials, search terms, or form data.</p>
+
+        <h2 id="hybrid-webview">Hybrid Apps & WebView</h2>
+        <p>For hybrid apps, identify when the app shows WebView content. Use <code>Mobile.switchToNativeContext</code> and <code>Mobile.switchToWebViewContext</code> (or similar) to switch between native and WebView. In WebView context, use WebUI keywords to interact with web content.</p>
+
+        <h2 id="mobile-profiles">Mobile Execution Profiles</h2>
+        <p>Create execution profiles for different devices, OS versions, or app variants. Set variables for app path, package/bundle ID, and capabilities. Select the profile when running the test suite to run on a specific device or emulator without changing the test.</p>
+
+        <h2 id="install-uninstall">Install & Uninstall App</h2>
+        <p>Use Katalon's capability to install the app before execution (e.g. from a local APK/IPA path or URL). For clean state, uninstall the app in teardown or at the start. Helps ensure consistent starting conditions across runs and devices.</p>
+
+        <h2 id="mobile-waits">Mobile Waits & Synchronization</h2>
+        <p>Use <code>Mobile.waitForElementPresent</code>, <code>Mobile.waitForElementVisible</code>, or <code>Mobile.delay</code> to handle slow loads and animations. Avoid fixed long delays; prefer waiting for a specific element or condition so tests stay fast and stable.</p>
+
+        <h2 id="notifications">Notifications & Permissions</h2>
+        <p>Handle system permission dialogs (camera, location, etc.) by locating and tapping Allow/Deny. For push notifications, dismiss or interact if they appear during the test. Use object spy to add permission dialog elements to the repository for reuse.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Katalon<span>Tutorials</span></a>
+          <p>Complete tutorials for Katalon Studio — Web, API, and Mobile test automation.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="web-testing.html">Web</a></li>
+          <li><a href="api-testing.html">API</a></li>
+          <li><a href="mobile-testing.html">Mobile</a></li>
+          <li><a href="advanced.html">Advanced</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">Katalon Tutorials Blog — From Zero to Hero.</div>
+    </div>
+  </footer>
+</body>
+</html>

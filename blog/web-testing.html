@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Testing with Katalon — Katalon Tutorials</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-inner">
+        <a href="index.html" class="logo">Katalon<span>Tutorials</span></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="web-testing.html">Web Testing</a></li>
+          <li><a href="api-testing.html">API Testing</a></li>
+          <li><a href="mobile-testing.html">Mobile Testing</a></li>
+          <li><a href="advanced.html">Advanced</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <a href="index.html#topics" class="back-link">← All topics</a>
+        <h1>Web Testing with Katalon</h1>
+        <p>Locate elements, use built-in keywords, manage the Object Repository, and build robust data-driven and verified web tests.</p>
+      </div>
+    </section>
+
+    <div class="content-area">
+      <div class="container">
+        <h2 id="elements">Element Locators</h2>
+        <p>Katalon uses the Object Repository to store elements with multiple identification properties. You can use XPath, CSS selectors, or attributes.</p>
+        <ul>
+          <li><strong>XPath</strong> — Absolute and relative XPath; use relative and attribute-based XPath for stability.</li>
+          <li><strong>CSS Selectors</strong> — ID, class, attributes; fast and readable.</li>
+          <li><strong>Dynamic selectors</strong> — Parameterized XPath/CSS using variables for dynamic content.</li>
+        </ul>
+
+        <h2 id="keywords">Built-in Keywords</h2>
+        <p>The <code>WebUI</code> keyword package provides actions and verifications for browser automation.</p>
+        <ul>
+          <li><code>WebUI.openBrowser(url)</code>, <code>WebUI.closeBrowser()</code></li>
+          <li><code>WebUI.click(testObject)</code>, <code>WebUI.setText(testObject, text)</code></li>
+          <li><code>WebUI.verifyElementPresent(testObject)</code>, <code>WebUI.verifyElementText(testObject, text)</code></li>
+          <li><code>WebUI.waitForElementPresent(testObject, timeout)</code></li>
+        </ul>
+
+        <h2 id="object-repo">Object Repository</h2>
+        <p>Central place for all web objects. Edit properties, add alternative locators, and use dynamic values (e.g. <code>${variable}</code>) in selector values.</p>
+
+        <h2 id="data-driven">Data-Driven Web Tests</h2>
+        <p>Use Data Files (Excel/CSV) or Internal Data to run the same test with different inputs. In the test case, add a data-driven binding and iterate over rows using a loop or built-in data-driven execution.</p>
+
+        <h2 id="assertions">Assertions & Verification</h2>
+        <p>Verify UI state with <code>WebUI.verify*</code> keywords: element present, text, attribute, checked state, and use <code>WebUI.verifyMatch</code> for flexible comparisons.</p>
+
+        <h2 id="waits">Waits & Synchronization</h2>
+        <p>Use <code>WebUI.waitForElementPresent</code>, <code>WebUI.waitForElementVisible</code>, and <code>WebUI.delay</code> to handle async content and avoid flaky tests.</p>
+
+        <h2 id="cross-browser">Cross-Browser Testing</h2>
+        <p>Run the same test suite on different browsers. In <strong>Execution Profile</strong>, set the default browser (Chrome, Firefox, Edge, Safari). Use multiple profiles or parameterized execution to run tests across all target browsers and catch browser-specific issues.</p>
+
+        <h2 id="popups-alerts">Popups, Alerts & Dialogs</h2>
+        <p>Handle native browser dialogs with <code>WebUI.alertAccept()</code> and <code>WebUI.alertDismiss()</code>. For custom modal dialogs, locate and interact with the overlay elements (e.g. OK/Cancel buttons) like any other object. Use <code>WebUI.getAlertText()</code> to verify alert message text.</p>
+
+        <h2 id="frames">Frames & Iframes</h2>
+        <p>Switch into an iframe before interacting with elements inside it: use <code>WebUI.switchToFrame()</code> with the frame’s test object or index. Perform actions, then switch back with <code>WebUI.switchToDefaultContent()</code>. Add the iframe and inner elements to the Object Repository for reuse.</p>
+
+        <h2 id="drag-drop">Drag and Drop</h2>
+        <p>Use <code>WebUI.dragAndDropToObject(sourceObject, targetObject)</code> to move an element to another. For more control, use <code>WebUI.dragAndDropByOffset</code> with pixel offsets. Ensure both source and target are visible and wait for them before performing the action.</p>
+
+        <h2 id="file-upload">File Upload & Download</h2>
+        <p><strong>Upload:</strong> Use <code>WebUI.uploadFile()</code> or set the file path on the file input object with <code>WebUI.setText</code> (when the input is visible). <strong>Download:</strong> Configure browser download preferences in the execution profile; verify the file in the download folder or use keywords to check existence and content.</p>
+
+        <h2 id="cookies-storage">Cookies & Storage</h2>
+        <p>Use <code>WebUI.getCookie(name)</code>, <code>WebUI.addCookie()</code>, and <code>WebUI.deleteCookie()</code> for cookies. For localStorage and sessionStorage, execute JavaScript via <code>WebUI.executeJavaScript</code> (e.g. <code>localStorage.setItem(key, value)</code>) to get, set, or clear values.</p>
+
+        <h2 id="keyboard-mouse">Keyboard & Mouse Actions</h2>
+        <p><code>WebUI.sendKeys()</code> sends key input to the focused element or a specific object; use key constants for Enter, Tab, etc. For mouse: <code>WebUI.rightClick()</code>, <code>WebUI.doubleClick()</code>, <code>WebUI.mouseOver()</code>. Combine with modifier keys when needed for advanced interactions.</p>
+
+        <h2 id="screenshots">Screenshots & Failure Handling</h2>
+        <p>Capture screenshots with <code>WebUI.takeScreenshot()</code> (full page or element). Configure failure handling in Test Suite or Execution Profile: take screenshot on failure, continue or stop execution. Screenshots are saved to the report folder and help debug failures in CI or locally.</p>
+
+        <h2 id="execution-profiles">Execution Profiles & Environments</h2>
+        <p>Create multiple <strong>Execution Profiles</strong> for dev, staging, prod. Set variables (e.g. base URL, credentials) per profile. Select the profile when running a test or suite. Use <code>${variableName}</code> in test objects and scripts to switch environments without changing test logic.</p>
+
+        <h2 id="headless">Headless Browser</h2>
+        <p>Run tests without a visible browser window for faster execution and CI. In Execution Profile, set browser to <strong>Headless Chrome</strong> or <strong>Headless Firefox</strong>. Same keywords and objects apply; use for regression and scheduled runs where no UI is needed.</p>
+
+        <h2 id="tables-dynamic">Tables & Dynamic Content</h2>
+        <p>For HTML tables, locate the table object and use XPath or CSS to target specific rows/cells (e.g. by index or text). For dynamic content that loads via AJAX, use <code>WebUI.waitForElementPresent</code> or <code>WebUI.waitForElementVisible</code> before interacting. Parameterize row index or text when the table data changes.</p>
+
+        <h2 id="dropdowns-select">Dropdowns & Select Elements</h2>
+        <p>Use <code>WebUI.selectOptionByIndex</code>, <code>WebUI.selectOptionByValue</code>, or <code>WebUI.selectOptionByLabel</code> for native <code>&lt;select&gt;</code> elements. For custom dropdowns (div/ul based), click to open and then click the option element like any other object. Add both the dropdown and option elements to the Object Repository.</p>
+
+        <h2 id="checkboxes-radio">Checkboxes & Radio Buttons</h2>
+        <p>Use <code>WebUI.check(testObject)</code> and <code>WebUI.uncheck(testObject)</code> for checkboxes. Verify state with <code>WebUI.verifyElementChecked</code> or <code>WebUI.verifyElementNotChecked</code>. For radio buttons, click the option you want; only one in the group can be selected. Ensure the input or its label is in the Object Repository.</p>
+
+        <h2 id="scroll-viewport">Scroll & Viewport</h2>
+        <p>Use <code>WebUI.scrollToElement(testObject, offset)</code> to scroll until an element is in view before clicking or verifying. <code>WebUI.scrollToPosition(x, y)</code> scrolls by pixel offset. Scrolling is often needed for lazy-loaded content or sticky headers; combine with wait keywords for stability.</p>
+
+        <h2 id="windows-tabs">Multiple Windows & Tabs</h2>
+        <p>When a click opens a new window or tab, use <code>WebUI.switchToWindowIndex(index)</code> or <code>WebUI.switchToWindowUrl(partialUrl)</code> to switch context. Perform actions in the new window, then use <code>WebUI.closeWindowIndex</code> or switch back to the original window. Get window title/URL with <code>WebUI.getWindowTitle</code> and <code>WebUI.getUrl</code> if needed.</p>
+
+        <h2 id="test-structure">Test Case Structure & Reuse</h2>
+        <p>Call another test case with <strong>Call Test Case</strong> to reuse flows (e.g. login, setup). Use <strong>Custom Keywords</strong> for reusable logic. Structure suites with setup/teardown test cases and use execution order. Pass data via variables or profiles so the same test case works in different contexts.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Katalon<span>Tutorials</span></a>
+          <p>Complete tutorials for Katalon Studio — Web, API, and Mobile test automation.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="web-testing.html">Web</a></li>
+          <li><a href="api-testing.html">API</a></li>
+          <li><a href="mobile-testing.html">Mobile</a></li>
+          <li><a href="advanced.html">Advanced</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">Katalon Tutorials Blog — From Zero to Hero.</div>
+    </div>
+  </footer>
+</body>
+</html>

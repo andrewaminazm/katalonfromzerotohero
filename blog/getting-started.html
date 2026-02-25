@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started with Katalon — Katalon Tutorials</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav-inner">
+        <a href="index.html" class="logo">Katalon<span>Tutorials</span></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="web-testing.html">Web Testing</a></li>
+          <li><a href="api-testing.html">API Testing</a></li>
+          <li><a href="mobile-testing.html">Mobile Testing</a></li>
+          <li><a href="advanced.html">Advanced</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <a href="index.html#topics" class="back-link">← All topics</a>
+        <h1>Getting Started with Katalon</h1>
+        <p>Install Katalon Studio, understand the project structure, and create your first automated test using Spy and Record.</p>
+      </div>
+    </section>
+
+    <div class="content-area">
+      <div class="container">
+        <h2 id="install">Installation & Setup</h2>
+        <p>Katalon Studio is a free test automation tool that supports web, API, and mobile testing. You need a compatible JDK (Java 8 or 11) installed before running the installer.</p>
+        <h3>Steps</h3>
+        <ul>
+          <li>Download Katalon Studio from the official website (Windows, macOS, Linux).</li>
+          <li>Install or verify JDK 8 or 11; set <code>JAVA_HOME</code> if required.</li>
+          <li>Run the Katalon installer and complete the setup wizard.</li>
+          <li>Launch Katalon Studio and sign in or create a Katalon account (optional for local use).</li>
+        </ul>
+
+        <h2 id="project">Project Structure</h2>
+        <p>A Katalon project contains test cases, object repository, profiles, and scripts in a clear folder layout.</p>
+        <h3>Key Folders</h3>
+        <ul>
+          <li><strong>Test Cases</strong> — Your test scenarios (manual or script mode).</li>
+          <li><strong>Object Repository</strong> — Stored elements (Web, API, Mobile) for reuse.</li>
+          <li><strong>Test Suites</strong> — Collections of test cases for execution.</li>
+          <li><strong>Profiles</strong> — Environment variables and execution settings.</li>
+          <li><strong>Keywords</strong> — Custom and built-in keywords (Groovy/Java).</li>
+          <li><strong>Data Files</strong> — Excel, CSV for data-driven tests.</li>
+        </ul>
+
+        <h2 id="recording">Spy & Record</h2>
+        <p>Use <strong>Spy Web</strong> to capture and add objects to the Object Repository, and <strong>Record</strong> to generate test steps by performing actions in the browser.</p>
+        <h3>Spy Web</h3>
+        <ul>
+          <li>Open Spy Web from the toolbar or <em>Tools → Spy Web</em>.</li>
+          <li>Enter the target URL and click Start.</li>
+          <li>Hover over elements to highlight; click to add them to the repository with a suggested name and locator.</li>
+        </ul>
+        <h3>Record</h3>
+        <ul>
+          <li>Create a new test case and switch to Record mode.</li>
+          <li>Start recording and perform clicks, inputs, and navigations in the browser.</li>
+          <li>Stop recording to get a generated script you can refine and add assertions to.</li>
+        </ul>
+
+        <h2 id="first-test">First Test Case & Run</h2>
+        <p>Create a new test case via <em>File → New → Test Case</em> or from the Test Cases folder. Add steps using the Manual view (drag keywords, select objects) or write Groovy in Script view. Click <strong>Run</strong> to execute; the log and report show pass/fail and any errors. Fix object locators or steps based on the first run.</p>
+
+        <h2 id="test-suites">Test Suites & Execution</h2>
+        <p>Test Suites group test cases for batch execution. Create a suite, add test cases (with optional data binding), set the execution profile, and run the suite. Use test suite collection for regression runs. Configure retry, failure handling, and report location in the suite or execution settings.</p>
+
+        <h2 id="manual-script">Manual vs Script Mode</h2>
+        <p>In <strong>Manual</strong> mode you build steps with keywords and test objects in a visual editor—no code required. In <strong>Script</strong> mode you see and edit the underlying Groovy; useful for loops, conditionals, and custom logic. You can switch between both views; changes in one are reflected in the other.</p>
+
+        <h2 id="profiles-variables">Profiles & Variables</h2>
+        <p><strong>Execution Profile</strong> (default profile) defines default browser, URL, timeouts, and custom variables. Create multiple profiles for different environments (e.g. dev, staging). In test cases and objects, use <code>${variableName}</code> to reference profile variables so one test works across environments.</p>
+
+        <h2 id="data-files-intro">Data Files Overview</h2>
+        <p>Under <strong>Data Files</strong>, add Excel (.xlsx) or CSV files. In a test case, bind the data file and map columns to variables. Use a loop or data-driven execution to run the test once per row. Ideal for login tests, search terms, or form data without duplicating test cases.</p>
+
+        <h2 id="account-licensing">Katalon Account & Licensing</h2>
+        <p>Sign in with a Katalon account (optional) to sync settings and access Katalon Platform. Free tier includes Katalon Studio and basic usage; paid plans add Katalon TestOps, Runtime Engine, and more parallel executions. You can use Studio fully offline without an account for local projects.</p>
+
+        <h2 id="ide-overview">IDE Overview & Shortcuts</h2>
+        <p>Main areas: <strong>Toolbar</strong> (Run, Spy, Record), <strong>Explorer</strong> (Test Cases, Objects, Suites, etc.), <strong>Editor</strong> (test case or script). Useful shortcuts: Run test case (Ctrl+F6 / Cmd+F6), Run suite, Search (Ctrl+H), and script autocomplete. Explore <em>Help → Keyboard Shortcuts</em> for the full list.</p>
+
+        <h2 id="sample-projects">Sample Projects & Demos</h2>
+        <p>Katalon provides sample projects (e.g. Demo API, Demo Web) and demo sites (e.g. Katalon Demo CURA) for practice. Clone or open a sample to see structure, keywords, and object usage. Use demo apps to learn recording, spying, and assertions without building your own app first.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">Katalon<span>Tutorials</span></a>
+          <p>Complete tutorials for Katalon Studio — Web, API, and Mobile test automation.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="getting-started.html">Getting Started</a></li>
+          <li><a href="web-testing.html">Web</a></li>
+          <li><a href="api-testing.html">API</a></li>
+          <li><a href="mobile-testing.html">Mobile</a></li>
+          <li><a href="advanced.html">Advanced</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">Katalon Tutorials Blog — From Zero to Hero.</div>
+    </div>
+  </footer>
+</body>
+</html>
